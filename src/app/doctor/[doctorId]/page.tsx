@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Star, MapPin, Phone, Clock, GraduationCap, Languages, Award, Calendar as CalendarIcon } from "lucide-react";
+import { Star, MapPin, Phone, Clock, GraduationCap, Award, Calendar as CalendarIcon } from "lucide-react";
 
 // Mock doctor data - replace with API call using params.doctorId
 const mockDoctor = {
@@ -40,10 +40,11 @@ const mockDoctor = {
     "2024-01-16": ["9:00 AM", "11:00 AM", "1:00 PM"],
     "2024-01-17": ["10:00 AM", "2:30 PM", "4:00 PM"],
     "2024-01-18": ["9:30 AM", "11:30 AM", "3:00 PM", "4:30 PM"]
-  }
+  } as Record<string, string[]>
 };
 
-export default function DoctorProfilePage({ params }: { params: { doctorId: string } }) {
+// export default function DoctorProfilePage({ params }: { params: { doctorId: string } }) {
+export default function DoctorProfilePage() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState("");
   const [isBooking, setIsBooking] = useState(false);

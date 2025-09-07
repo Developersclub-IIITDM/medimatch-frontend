@@ -1,9 +1,5 @@
 import { redirect } from "next/navigation";
-import { redirect } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { getCurrentUser, getTodaysAppointments } from "@/lib/server/dashboard";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { getCurrentUser, getTodaysAppointments } from "@/lib/server/dashboard";
@@ -28,7 +24,7 @@ export default async function DoctorDashboard() {
         
         <Card>
           <CardHeader>
-            <CardTitle>Today's Appointments ({appointments.length})</CardTitle>
+            <CardTitle>Today&apos;s Appointments ({appointments.length})</CardTitle>
           </CardHeader>
           <CardContent>
             {appointments.length === 0 ? (
