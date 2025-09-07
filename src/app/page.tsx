@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ClipboardCheck, Search, Users } from "lucide-react";
+import specialities from "@/lib/specialities.json"
 import Link from "next/link";
 
 export default function Home() {
