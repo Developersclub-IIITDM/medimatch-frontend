@@ -3,7 +3,7 @@
 import { getCurrentSession, invalidateSession, deleteSessionTokenCookie } from "@/lib/server/session";
 import { redirect } from "next/navigation";
 
-export async function GET(req: Request){
+export async function GET(){
 	const { session } = await getCurrentSession();
 	if (!session) {
 		return new Response(null, {

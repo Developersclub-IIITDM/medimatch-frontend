@@ -140,7 +140,7 @@ export default function OnboardingPage() {
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold">Welcome to MediMatch</CardTitle>
-        <p className="text-muted-foreground">Let's get you set up. Are you a doctor or a patient?</p>
+        <p className="text-muted-foreground">Let&apos;s get you set up. Are you a doctor or a patient?</p>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ export default function OnboardingPage() {
           >
             <CardContent className="flex flex-col items-center justify-center p-6">
               <Stethoscope className="h-12 w-12 mb-4 text-primary" />
-              <h3 className="font-semibold text-lg">I'm a Doctor</h3>
+              <h3 className="font-semibold text-lg">I&apos;m a Doctor</h3>
               <p className="text-sm text-muted-foreground text-center">
                 Join as a healthcare provider
               </p>
@@ -167,7 +167,7 @@ export default function OnboardingPage() {
           >
             <CardContent className="flex flex-col items-center justify-center p-6">
               <User className="h-12 w-12 mb-4 text-primary" />
-              <h3 className="font-semibold text-lg">I'm a Patient</h3>
+              <h3 className="font-semibold text-lg">I&apos;m a Patient</h3>
               <p className="text-sm text-muted-foreground text-center">
                 Looking for healthcare services
               </p>

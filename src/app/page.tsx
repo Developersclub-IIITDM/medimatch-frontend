@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ClipboardCheck, Search, Users } from "lucide-react";
-import specialities from "@/lib/specialities.json"
 import Link from "next/link";
 
 export default function Home() {
@@ -68,12 +67,12 @@ export default function Home() {
         <div className="flex justify-center gap-4">
           <Link href="/login/google">
             <Button className="px-6 py-3 rounded-2xl text-lg">
-              I'm a Doctor
+              I&apos;m a Doctor
             </Button>
           </Link>
           <Link href="/login/google">
             <Button variant="outline" className="px-6 py-3 rounded-2xl text-lg">
-              I'm a Patient
+              I&apos;m a Patient
             </Button>
           </Link>
         </div>

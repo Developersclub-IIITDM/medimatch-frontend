@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/avatar";
 
 import type { SessionValidationResult } from "@/lib/server/session";
+import { Badge } from "./ui/badge";
 
 interface NavbarProps {
   data: SessionValidationResult
@@ -33,7 +34,13 @@ interface NavbarProps {
 
 export default function Navbar({ data }: NavbarProps) {
   const { theme, setTheme } = useTheme();
-
+  
+  function formatRole (role: string) {
+    if (role === 'U') return 'Patient';
+    if (role === 'D') return 'Doctor';
+    if (role === 'A') return 'Admin';
+    return 'Unknown';
+  }
   return (
     <>
       <div className="h-16 px-2 mx-auto flex max-w-7xl flex-row gap-4 items-center">
@@ -63,8 +70,13 @@ export default function Navbar({ data }: NavbarProps) {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuGroup>
-                <DropdownMenuLabel>
+                <DropdownMenuLabel className="flex flex-row items-center gap-2">
                   {data?.user ? data.user.name : "Not signed in"}
+                  {
+                    data.user && data.user.role && (
+                      <Badge>{formatRole(data.user.role)}</Badge>
+                    )
+                  }
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
 

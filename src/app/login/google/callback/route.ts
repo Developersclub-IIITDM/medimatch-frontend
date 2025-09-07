@@ -2,7 +2,6 @@ import { generateSessionToken, createSession, setSessionTokenCookie } from "@/li
 import { google } from "@/lib/server/auth";
 import { cookies } from "next/headers";
 import { decodeIdToken } from "arctic";
-import { redirect } from "next/navigation";
 
 import type { OAuth2Tokens } from "arctic";
 import { createUser, getUserFromGoogleId } from "@/lib/server/user";
@@ -28,7 +27,7 @@ export async function GET(request: Request): Promise<Response> {
 	let tokens: OAuth2Tokens;
 	try {
 		tokens = await google.validateAuthorizationCode(code, codeVerifier);
-	} catch (e) {
+	} catch {
 		// Invalid code or client credentials
 		return new Response(null, {
 			status: 400
@@ -55,7 +54,7 @@ export async function GET(request: Request): Promise<Response> {
 		return new Response(null, {
 			status: 302,
 			headers: {
-				Location: "/"
+				Location: existingUser.role === 'U' ? "/dashboard" : existingUser.role === 'D' ? "/doctor-dashboard" : existingUser.role === 'A' ? "/admin" : "/onboarding"
 			}
 		});
 	}
@@ -68,7 +67,7 @@ export async function GET(request: Request): Promise<Response> {
 	return new Response(null, {
 		status: 302,
 		headers: {
-			Location: "/"
+			Location: "/onboarding"
 		}
 	});
 }
