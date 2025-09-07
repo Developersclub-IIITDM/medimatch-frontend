@@ -109,6 +109,7 @@ export default function OnboardingPage() {
         });
 
         if (response.ok) {
+          localStorage.setItem('userType', 'doctor');
           router.push("/doctor-dashboard");
         } else {
           throw new Error("Failed to submit doctor profile");
@@ -123,6 +124,7 @@ export default function OnboardingPage() {
         });
 
         if (response.ok) {
+          localStorage.setItem('userType', 'patient');
           router.push("/dashboard");
         } else {
           throw new Error("Failed to submit patient profile");
